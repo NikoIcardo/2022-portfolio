@@ -16,7 +16,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   const GradientClass: React.FunctionComponent<{
     text: HeaderProps['children'];
   }> = ({ text }) => (
-    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+    <span className="text-transparent bg-clip-text bg-gradient-to-r to-indigo-600 from-sky-400">
       {text}
     </span>
   );

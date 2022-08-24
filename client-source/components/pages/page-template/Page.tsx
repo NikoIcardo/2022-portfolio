@@ -28,7 +28,7 @@ export default function Page({
   );
 
   const PageDescription: React.FunctionComponent = () => (
-    <div className="m-5 p-3 border">
+    <div className="m-5 p-3 border text-white">
       {!!description && <p>{description}</p>}
     </div>
   );
