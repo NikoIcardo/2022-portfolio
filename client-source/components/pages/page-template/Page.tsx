@@ -22,15 +22,19 @@ export default function Page({
   );
 
   const SecondaryHeader: React.FunctionComponent = () => (
-    <div className="m-3">{!!header && <Header size="h3">{header}</Header>}</div>
+    <div className="mt-5 mx-3 p-2">
+      {!!header && <Header size="h2">{header}</Header>}
+    </div>
   );
 
   const PageDescription: React.FunctionComponent = () => (
-    <div className="m-5">{!!description && <p>{description}</p>}</div>
+    <div className="m-5 p-3 border">
+      {!!description && <p>{description}</p>}
+    </div>
   );
 
   const PageBody: React.FunctionComponent = () => (
-    <div>
+    <div className="m-5 p-3 border">
       <body />
     </div>
   );

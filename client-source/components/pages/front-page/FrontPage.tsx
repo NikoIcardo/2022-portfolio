@@ -8,8 +8,8 @@ export default function FrontPage() {
   return (
     <Page
       title="Typing Battle"
-      header=""
-      description="Welcome to the front page!"
+      header="Welcome to the front page!"
+      description="Typing Battle"
       body={body}
     />
   );

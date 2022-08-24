@@ -29,7 +29,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
       );
     case 'h2':
       return (
-        <h2 className="text-4xl font-extrabold dark:text-white">
+        <h2 className="text-4xl font-extrabold text-sky-600">
           {gradient ? <GradientClass text={children} /> : children}
         </h2>
       );
