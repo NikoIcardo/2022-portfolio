@@ -5,6 +5,7 @@ export default function Page({
   title,
   header,
   description,
+  body,
 }: {
   title?: string;
   header?: string;
@@ -12,7 +13,7 @@ export default function Page({
   body: React.FunctionComponent;
 }) {
   const Title: React.FunctionComponent = () => (
-    <div className="m-3">
+    <div className="mr-3 ml-3 mb-3 mt-0 pt-0">
       {!!title && (
         <Header size="h1" gradient={true}>
           {title}
@@ -34,9 +35,7 @@ export default function Page({
   );
 
   const PageBody: React.FunctionComponent = () => (
-    <div className="m-5 p-3 border">
-      <body />
-    </div>
+    <div className="m-5 p-3 border flex  place-content-center">{body({})}</div>
   );
   return (
     <div>

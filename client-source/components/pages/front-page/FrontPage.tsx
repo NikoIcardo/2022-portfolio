@@ -1,9 +1,14 @@
 import React from 'react';
 import Page from '../page-template/Page';
+import ModeButtons from './sub-components/ModeButton';
 
 export default function FrontPage() {
   const body: React.FunctionComponent = () => {
-    return <div></div>;
+    return (
+      <div>
+        <ModeButtons />
+      </div>
+    );
   };
   return (
     <Page
