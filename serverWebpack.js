@@ -4,7 +4,7 @@ var LiveReloadPlugin = require('webpack-livereload-plugin');
 
 module.exports = {
   name: 'server',
-  entry: './server/index.ts',
+  entry: './server-source/index.ts',
   devtool: 'inline-source-map',
   module: {
     rules: [

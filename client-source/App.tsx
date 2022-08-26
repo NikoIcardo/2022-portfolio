@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { FrontPage } from './components/pages';
-
+// still need to setup react routing
 const App = () => {
   return (
     <div className="bg-slate-700 h-screen m-0 p-0">
