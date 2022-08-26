@@ -76,7 +76,7 @@ export default class TypingGameStateReducer {
 //   SEND_GAME_INPUTS_TO_SERVER, 
 //   RECEIVE_GAME_STATE_INPUTS_FROM_SERVER
 // }
- private gameReducer = {  
+  private gameReducer = {  
     [ReducerType.REQUEST_GAME]: () => this.requestGame(), 
     [ReducerType.ACCEPT_GAME]: () => this.acceptGame(), 
     [ReducerType.INITIALIZE_GAME]: () =>  this.initializeGame(),  
@@ -87,11 +87,13 @@ export default class TypingGameStateReducer {
     [ReducerType.RECEIVE_GAME_STATE_INPUTS_FROM_SERVER]: () => this.recieveGameStateInputsFromServer(),
   } 
 
-  public getSlice = () => createSlice({
+  private slice = createSlice({
       name: this.name!,
       initialState: this.reducerInitialState, 
       reducers: this.gameReducer, 
     }); 
+  
+  public getReducer = () => this.slice.reducer
 
   /**
    * requestGame - needs to instantiate a socket class which is to be defined. 
