@@ -12,7 +12,6 @@ export default function FrontPage() {
   };
   return (
     <Page
-      title="Typing Battle"
       header="Welcome to the front page!"
       description="Typing Battle"
       body={body}

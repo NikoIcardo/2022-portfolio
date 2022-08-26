@@ -14,11 +14,9 @@ export default function Page({
 }) {
   const Title: React.FunctionComponent = () => (
     <div className="mr-3 ml-3 mb-3 mt-0 pt-0">
-      {!!title && (
-        <Header size="h1" gradient={true}>
-          {title}
-        </Header>
-      )}
+      <Header size="h1" gradient={true}>
+        {title || 'Typing Battle'}
+      </Header>
     </div>
   );
 

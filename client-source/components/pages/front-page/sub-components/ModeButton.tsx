@@ -1,7 +1,8 @@
 import React from 'react';
 
 const ModeButtons = () => {
-  const textClasses = 'text-white text-bold text-3xl';
+  const textClasses =
+    'text-white text-bold text-4xl font-extrabold tracking-tight';
   return (
     <div className="m-3 flex items-center ">
       <div>
