@@ -3,13 +3,13 @@ import Header from './Header';
 
 export default function Page({
   title,
-  header,
-  description,
+  secondaryText,
+  pageHeader,
   body,
 }: {
   title?: string;
-  header?: string;
-  description?: string;
+  secondaryText?: string;
+  pageHeader?: string | React.FunctionComponent;
   body: React.FunctionComponent;
 }) {
   const Title: React.FunctionComponent = () => (
@@ -20,15 +20,16 @@ export default function Page({
     </div>
   );
 
-  const SecondaryHeader: React.FunctionComponent = () => (
+  const SecondaryText: React.FunctionComponent = () => (
     <div className="mt-5 mx-3 p-2">
-      {!!header && <Header size="h2">{header}</Header>}
+      {!!secondaryText && <Header size="h2">{secondaryText}</Header>}
     </div>
   );
 
-  const PageDescription: React.FunctionComponent = () => (
+  const PageHeader: React.FunctionComponent = () => (
     <div className="m-5 p-3 border text-white">
-      {!!description && <p>{description}</p>}
+      {!!pageHeader &&
+        (typeof pageHeader === 'string' ? <p>{pageHeader}</p> : pageHeader({}))}
     </div>
   );
 
@@ -38,8 +39,8 @@ export default function Page({
   return (
     <div>
       <Title />
-      <SecondaryHeader />
-      <PageDescription />
+      <SecondaryText />
+      <PageHeader />
       <PageBody />
     </div>
   );
