@@ -46,7 +46,7 @@ module.exports = {
   },
   plugins: [
     new LiveReloadPlugin({
-      port: 3000,
+      port: 8080,
       protocol: 'https',
       hostname: 'localhost',
     }),
