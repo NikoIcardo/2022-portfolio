@@ -12,7 +12,10 @@
  */
 
 import { io, Socket } from 'socket.io-client';
-import type { ActionCreatorWithoutPayload } from '@reduxjs/toolkit';
+import type {
+  ActionCreatorWithoutPayload,
+  ActionCreatorWithPayload,
+} from '@reduxjs/toolkit';
 
 import store from '../store';
 import { actions as TypingBattleReducerActions } from '../reducers/TypingBattleReducer';
@@ -61,7 +64,9 @@ class TypingGameSocket {
 
   // Receive - This need to be called in constructor to instantiate them
   private socketReceptionMapping: {
-    [code: string]: ActionCreatorWithoutPayload;
+    [code: string]:
+      | ActionCreatorWithoutPayload
+      | ActionCreatorWithPayload<any, string>;
   } = {
     [SocketCode.RECEIVE_GAME]: TypingBattleReducerActions.ACCEPT_GAME,
     [SocketCode.RECEIVE_START_GAME]: TypingBattleReducerActions.START_GAME,
@@ -70,9 +75,21 @@ class TypingGameSocket {
   };
   initializeSocket = () => {
     Object.entries(this.socketReceptionMapping).map(
-      ([socketCode, action]: [string, ActionCreatorWithoutPayload]) => {
-        this.socket?.on(socketCode, action);
+      ([socketCode, action]: [
+        string,
+        ActionCreatorWithoutPayload | ActionCreatorWithPayload<any, string>
+      ]) => {
+        this.socket?.on(socketCode, (serverGameUpdate?) => {
+          if (!!serverGameUpdate) {
+            this.dispatch(action(serverGameUpdate)); // Throwing error but thats only because theres no payloads defined yet in reducer
+          } else {
+            // @ts-ignore
+            this.dispatch(action());
+          }
+        });
       }
     );
   };
 }
+
+export default TypingGameSocket;

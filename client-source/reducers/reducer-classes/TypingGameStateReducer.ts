@@ -1,15 +1,28 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, Slice } from '@reduxjs/toolkit';
 import {
   TypingGameInputs,
   ReducerState,
   ReducerType,
 } from './typingGameStateReducerTypes';
 
+import TypingGameSocket, {
+  SocketCode,
+} from '../../client-sockets/TypingGameSocket';
+import { Socket } from 'socket.io-client';
+
 // Eventually can add customizeable game inputs etc to create different games with this class.
-export default class TypingGameStateReducer {
+export default class TypingGameStateHandler {
   private name: string | undefined;
+  private slice: Slice | undefined;
+  private gameSocket: TypingGameSocket | undefined;
   constructor(name: string) {
     this.name = name;
+    this.slice = createSlice({
+      name: this.name!,
+      initialState: this.reducerInitialState,
+      reducers: this.gameReducer,
+    });
+    this.gameSocket = new TypingGameSocket();
   }
 
   /**
@@ -49,21 +62,18 @@ export default class TypingGameStateReducer {
       this.recieveGameStateInputsFromServer(),
   };
 
-  private slice = createSlice({
-    name: this.name!,
-    initialState: this.reducerInitialState,
-    reducers: this.gameReducer,
-  });
+  public getReducer = () => this.slice!.reducer;
 
-  public getReducer = () => this.slice.reducer;
-
-  public getActions = () => this.slice.actions;
+  public getActions = () => this.slice!.actions;
 
   /**
-   * requestGame - needs to instantiate a socket class which is to be defined.
+   * requestGame - need to instantiate a socket class which is to be defined.
    * then needs to initiate a socket request to server to look for game.
    */
-  private requestGame = () => {};
+  private requestGame = () => {
+    this.gameSocket?.socketRequest[SocketCode.REQUEST_GAME];
+    return {};
+  };
 
   /**
    * On socket input that game has been accepted, change game accepted
