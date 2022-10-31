@@ -8,6 +8,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(css)$/,
+        include: path.resolve(__dirname, 'client-source'),
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
         test: /\.(ts|tsx)$/,
         exclude: /(node_modules|bower_components)/,
         use: {

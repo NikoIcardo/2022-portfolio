@@ -2,46 +2,29 @@ import React from 'react';
 import Header from './Header';
 
 export default function Page({
-  title,
-  secondaryText,
-  pageHeader,
-  body,
+  MainLeftSide,
+  MainRightSide,
+  SubBody,
+  Footer,
 }: {
-  title?: string;
-  secondaryText?: string;
-  pageHeader?: string | React.FunctionComponent;
-  body: React.FunctionComponent;
+  MainLeftSide: React.FunctionComponent;
+  MainRightSide: React.FunctionComponent;
+  SubBody?: React.FunctionComponent;
+  Footer?: React.FunctionComponent;
 }) {
-  const Title: React.FunctionComponent = () => (
-    <div className="mr-3 ml-3 mb-3 mt-0 pt-0">
-      <Header size="h1" gradient={true}>
-        {title || 'Typing Battle'}
-      </Header>
+  const PageFirstRow: React.FunctionComponent = () => (
+    <div className="grid grid-cols-5 gap-1 grid-flow-col width-100 m-2">
+      <div className="col-span-2 border-4 border-slate-300">
+        <MainLeftSide />
+      </div>
+      <div className="col-span-3 border-4 border-slate-300">
+        <MainRightSide />
+      </div>
     </div>
-  );
-
-  const SecondaryText: React.FunctionComponent = () => (
-    <div className="mt-5 mx-3 p-2">
-      {!!secondaryText && <Header size="h2">{secondaryText}</Header>}
-    </div>
-  );
-
-  const PageHeader: React.FunctionComponent = () => (
-    <div className="m-5 p-3 border text-white">
-      {!!pageHeader &&
-        (typeof pageHeader === 'string' ? <p>{pageHeader}</p> : pageHeader({}))}
-    </div>
-  );
-
-  const PageBody: React.FunctionComponent = () => (
-    <div className="m-5 p-3 border flex  place-content-center">{body({})}</div>
   );
   return (
     <div>
-      <Title />
-      <SecondaryText />
-      <PageHeader />
-      <PageBody />
+      <PageFirstRow />
     </div>
   );
 }
