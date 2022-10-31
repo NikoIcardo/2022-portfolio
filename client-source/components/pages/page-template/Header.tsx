@@ -23,19 +23,19 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   switch (size) {
     case 'h1':
       return (
-        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-zinc-900 md:text-5xl lg:text-6xl dark:text-white">
           {gradient ? <GradientClass text={children} /> : children}
         </h1>
       );
     case 'h2':
       return (
-        <h2 className="text-4xl font-extrabold text-sky-600">
+        <h2 className="text-4xl font-extrabold text-zinc-900">
           {gradient ? <GradientClass text={children} /> : children}
         </h2>
       );
     case 'h3':
       return (
-        <h3 className="">
+        <h3 className="text-2xl">
           {gradient ? <GradientClass text={children} /> : children}
         </h3>
       );

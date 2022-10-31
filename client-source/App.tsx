@@ -4,14 +4,13 @@ import { FrontPage } from './components/pages';
 
 const App = () => {
   return (
-    <div className="bg-lime-50 h-screen m-0 p-0">
-      <div>{/**This space reserved for Navbar */}</div>
-      <div>
-        {/**If we need a general page wrapper lets put it around this */}
-        <FrontPage />
-        <p>hello this is courier</p>
+    <>
+      <div className="font-main text-zinc-700 bg-zinc-100 h-screen m-0 p-0">
+        <div>
+          <FrontPage />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
