@@ -26,7 +26,7 @@ export default function FrontPage() {
           </p>
         </div>
         <div className="bg-zinc-300 h-300 p-4 my-4">
-          <Header size="h3" children={'Skills'} />
+          <Header size="h3" children={'Skills and Technologies'} />
           <div>
             Remember to make these buttons you dunce
             {skills.map(({ heading, items }: SkillObject) => (
