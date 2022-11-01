@@ -68,6 +68,7 @@ export const skills: SkillObject[] = [
       'Mac OS - Professional Use',
       'Windows OS - Professional Use',
       'Microsoft Office - Professional Use',
+      'Unit Testing - Professional Level',
       'Management - Professional Level',
       'Jupyter Notebook - Strong Exposure',
       'Machine Learning - University Level Exposure',
