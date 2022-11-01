@@ -35,12 +35,16 @@ const Header: React.FunctionComponent<HeaderProps> = ({
       );
     case 'h3':
       return (
-        <h3 className="text-2xl">
+        <h3 className="text-2xl mb-2">
           {gradient ? <GradientClass text={children} /> : children}
         </h3>
       );
     case 'h4':
-      return <h4>{gradient ? <GradientClass text={children} /> : children}</h4>;
+      return (
+        <h4 className="text-xl underline mb-1">
+          {gradient ? <GradientClass text={children} /> : children}
+        </h4>
+      );
     case 'h5':
       return <h5>{gradient ? <GradientClass text={children} /> : children}</h5>;
     case 'h6':
