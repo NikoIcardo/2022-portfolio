@@ -12,13 +12,23 @@ export default function Page({
   SubBody: React.FunctionComponent;
   Footer?: React.FunctionComponent;
 }) {
+  const mainContainerClass =
+    'lg:grid lg:grid-cols-4 grid-flow-col gap-2 mx-2 h-full p-12';
+  const mainContainerLarge = 'xl:grid-cols-12';
+
+  const leftContainerClasses = 'lg:col-start-1 lg:col-span-2 my-2 p-2 h-full';
+  const leftContainerXL = 'xl:col-start-1 xl:col-span-5';
+
+  const rightContainerClasses = 'lg:col-start-3 lg:col-span-2 my-2 p-2 h-full';
+  const rightContainerXL = 'xl:col-start-6 xl:col-span-full';
+
   // border-4 border-zinc-600
   const PageFirstRow: React.FunctionComponent = () => (
-    <div className="grid grid-cols-5 gap-0 grid-flow-col mx-2 ">
-      <div className={`col-span-2 my-2 p-2`}>
+    <div className={[mainContainerClass, mainContainerLarge].join(' ')}>
+      <div className={[leftContainerClasses, leftContainerXL].join(' ')}>
         <MainLeftSide />
       </div>
-      <div className={`col-span-3 my-2 p-2`}>
+      <div className={[rightContainerClasses, rightContainerXL].join(' ')}>
         <MainRightSide />
       </div>
     </div>

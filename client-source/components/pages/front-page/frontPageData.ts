@@ -60,6 +60,7 @@ export const skills: SkillObject[] = [
     heading: 'Misc.',
     items: [
       'VMware VSphere and NSX APIs - Professional Use',
+      'Unit Testing - Professional Level',
       'Git - Professional Use',
       'Github - Professional Use',
       'Code Review - Professional Level',
@@ -68,7 +69,6 @@ export const skills: SkillObject[] = [
       'Mac OS - Professional Use',
       'Windows OS - Professional Use',
       'Microsoft Office - Professional Use',
-      'Unit Testing - Professional Level',
       'Management - Professional Level',
       'Jupyter Notebook - Strong Exposure',
       'Machine Learning - University Level Exposure',

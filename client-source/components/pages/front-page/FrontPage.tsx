@@ -5,12 +5,13 @@ import Button from './sub-components/Button';
 import List from './sub-components/List';
 
 import { skills, SkillObject } from './frontPageData';
+import ProjectCard from './sub-components/ProjectCard';
 
 export default function FrontPage() {
   const leftMain: React.FunctionComponent = () => {
     return (
       <>
-        <div className="bg-zinc-300 p-4 ">
+        <div className="bg-zinc-300 p-4 rounded-lg">
           <div>
             <Header size="h2" children={'Niko Icardo'} />
             <Header size="h3" children={'Software Engineer'} />
@@ -25,7 +26,8 @@ export default function FrontPage() {
             professional software engineer.
           </p>
         </div>
-        <div className="bg-zinc-300 h-300 p-4 my-4">
+
+        <div className="bg-zinc-300 h-300 p-4 my-4 rounded-lg">
           <Header size="h3" children={'Skills and Technologies'} />
           <div>
             Remember to make these buttons you dunce
@@ -38,9 +40,11 @@ export default function FrontPage() {
     );
   };
   const rightMain: React.FunctionComponent = () => (
-    <div>
-      <Button text="<" />
-      <Button text=">" />
+    <div className="h-500">
+      {/* <Button text="<" />
+      <Button text=">" /> */}
+
+      <ProjectCard />
     </div>
   );
 
