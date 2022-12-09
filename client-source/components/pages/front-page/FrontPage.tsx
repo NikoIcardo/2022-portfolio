@@ -4,7 +4,12 @@ import Page from '../page-template/Page';
 import Button from './sub-components/Button';
 import List from './sub-components/List';
 
-import { skills, SkillObject } from './frontPageData';
+import {
+  skills,
+  SkillObject,
+  professionalLinks,
+  LinkObject,
+} from './frontPageData';
 import ProjectCard from './sub-components/ProjectCard';
 
 export default function FrontPage() {
@@ -28,9 +33,17 @@ export default function FrontPage() {
         </div>
 
         <div className="bg-zinc-300 h-300 p-4 my-4 rounded-lg">
+          <Header size="h3" children={'Professional Items'} />
+          <div>
+            {professionalLinks.map(({ title, link }: LinkObject) => (
+              <List heading={title} items={[link]} link={true} />
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-zinc-300 h-300 p-4 my-4 rounded-lg">
           <Header size="h3" children={'Skills and Technologies'} />
           <div>
-            Remember to make these buttons you dunce
             {skills.map(({ heading, items }: SkillObject) => (
               <List heading={heading} items={items} />
             ))}

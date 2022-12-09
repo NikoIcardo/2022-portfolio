@@ -4,7 +4,8 @@ import Header from '../../page-template/Header';
 const List: React.FunctionComponent<{
   heading: string;
   items: string[];
-}> = ({ heading, items }) => {
+  link?: boolean;
+}> = ({ heading, items, link }) => {
   const [showList, setShowList] = useState<boolean>(false);
 
   const buttonClasses =
@@ -14,9 +15,15 @@ const List: React.FunctionComponent<{
   return (
     <div className={'my-3 text-left ' + border}>
       <button className={buttonClasses} onClick={() => setShowList(!showList)}>
-        <Header size="h4" children={heading} />
+        {link ? (
+          <a href={items[0]} target="_blank">
+            <Header size="h4" children={heading} />
+          </a>
+        ) : (
+          <Header size="h4" children={heading} />
+        )}
       </button>
-      {showList && (
+      {!link && showList && (
         <div className="p-4 my-2">
           <ul className="ml-3 list-disc">
             {items.map((item: string) => (

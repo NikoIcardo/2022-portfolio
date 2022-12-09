@@ -3,12 +3,32 @@ export interface SkillObject {
   items: string[];
 }
 
+export interface LinkObject {
+  title: string;
+  link: string;
+}
+
+export const professionalLinks: LinkObject[] = [
+  {
+    title: 'Resume',
+    link: 'https://nikoicardo.com/Niko-Icardo-Resume.pdf',
+  },
+  {
+    title: 'Github',
+    link: 'https://github.com/NikoIcardo',
+  },
+  {
+    title: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/niko-icardo-7366391a4',
+  },
+];
+
 export const skills: SkillObject[] = [
   {
     heading: 'Languages',
     items: [
       'Typescript - Professional Use',
-      'ECMA ES5 & ES6 - Professional Use',
+      'JavaScript ES5 & ES6 - Professional Use',
       'HTML 5 - Professional Use',
       'CSS 3 - Professional Use',
       'Python - Strong Proficiency',
@@ -63,6 +83,7 @@ export const skills: SkillObject[] = [
       'Unit Testing - Professional Level',
       'Git - Professional Use',
       'Github - Professional Use',
+      'AGILE/SCRUM - Professional Level',
       'Code Review - Professional Level',
       'VS Code - Professional Use',
       'Linux - Professional Use',
