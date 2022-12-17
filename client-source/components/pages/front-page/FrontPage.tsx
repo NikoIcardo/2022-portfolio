@@ -22,7 +22,7 @@ export default function FrontPage() {
             <Header size="h3" children={'Software Engineer'} />
           </div>
           <p className="my-4">
-            I have been coding throughout most of my life; from jr. high java
+            I have been coding throughout most of my life: from jr. high java
             projects, highschool java and web courses, c++ university courses,
             matlab and python modelling research at the university of Idaho, to
             a year of professional software engineering. I currently work with
