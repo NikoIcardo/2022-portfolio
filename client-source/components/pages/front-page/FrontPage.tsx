@@ -35,17 +35,30 @@ export default function FrontPage() {
         <div className="bg-zinc-300 h-300 p-4 my-4 rounded-lg">
           <Header size="h3" children={'Professional Items'} />
           <div>
-            {professionalLinks.map(({ title, link }: LinkObject) => (
-              <List heading={title} items={[link]} link={true} />
-            ))}
+            {professionalLinks.map(
+              ({ title, link }: LinkObject, index: number) => (
+                <List
+                  heading={title}
+                  items={[link]}
+                  link={true}
+                  colorIndex={index}
+                  key={title}
+                />
+              )
+            )}
           </div>
         </div>
 
         <div className="bg-zinc-300 h-300 p-4 my-4 rounded-lg">
           <Header size="h3" children={'Skills and Technologies'} />
           <div>
-            {skills.map(({ heading, items }: SkillObject) => (
-              <List heading={heading} items={items} />
+            {skills.map(({ heading, items }: SkillObject, index: number) => (
+              <List
+                heading={heading}
+                items={items}
+                colorIndex={index}
+                key={items[0]}
+              />
             ))}
           </div>
         </div>

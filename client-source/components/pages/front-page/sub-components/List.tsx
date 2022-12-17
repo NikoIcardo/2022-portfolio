@@ -5,16 +5,27 @@ const List: React.FunctionComponent<{
   heading: string;
   items: string[];
   link?: boolean;
-}> = ({ heading, items, link }) => {
+  colorIndex?: number;
+}> = ({ heading, items, link, colorIndex }) => {
   const [showList, setShowList] = useState<boolean>(false);
-
-  const buttonClasses =
-    'p-2 hover:bg-zinc-100 w-full rounded-lg border-b border-zinc-500';
+  const colors = ['yellow', 'sky', 'emerald', 'rose', 'violet'];
+  const color =
+    typeof colorIndex === 'number'
+      ? colors[colorIndex % colors.length]
+      : 'zinc';
+  const buttonClasses = `p-2 w-full rounded-lg border-b border-zinc-500 bg-${color}-200 hover:bg-${color}-100`;
   const border =
     'border rounded-lg border-zinc-500 hover:border-zinc-900 w-3/5';
   return (
-    <div className={'my-3 text-left ' + border}>
-      <button className={buttonClasses} onClick={() => setShowList(!showList)}>
+    <div
+      className={`my-3 text-left ${border} ${
+        showList && `bg-${colors[(colorIndex! + 2) % colors.length]}-100`
+      }`}
+    >
+      <button
+        className={`${buttonClasses} `}
+        onClick={() => setShowList(!showList)}
+      >
         {link ? (
           <a href={items[0]} target="_blank">
             <Header size="h4" children={heading} />
@@ -24,7 +35,7 @@ const List: React.FunctionComponent<{
         )}
       </button>
       {!link && showList && (
-        <div className="p-4 my-2">
+        <div className={`p-4 my-2`}>
           <ul className="ml-3 list-disc">
             {items.map((item: string) => (
               <li key={item}>{item}</li>
