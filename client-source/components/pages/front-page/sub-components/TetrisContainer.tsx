@@ -4,7 +4,7 @@ import Header from '../../page-template/Header';
 const transitionClass = 'transition ease-in-out delay-150 duration-200 ';
 
 const mainDivClasses =
-  'hover:shadow-2xl h-[225px] hover:scale-y-150 hover:translate-y-10 rounded-lg bg-zinc-300 text-center justify-center';
+  'rounded-lg bg-zinc-300 text-center justify-center hover:shadow-2xl h-[225px] hover:scale-y-150 hover:translate-y-10 hover:bg-sky-800';
 
 const TetrisContainer: React.FunctionComponent = () => {
   const textBaseClass = 'text-4xl';
@@ -13,7 +13,9 @@ const TetrisContainer: React.FunctionComponent = () => {
   const [text, setText] = useState(
     <h1 className={textBaseClass}>Play Tetris</h1>
   );
-  const [currentTimeout, setCurrentTimeout] = useState(0);
+  const [currentTimeout, setCurrentTimeout] = useState<
+    NodeJS.Timeout | undefined
+  >(undefined);
 
   const createTextEffect = () => {
     const incrementTextPositionAndSetText = () => {
@@ -40,7 +42,7 @@ const TetrisContainer: React.FunctionComponent = () => {
               } else {
                 colorClass = 'text-green-200';
               }
-              return <span className={`${colorClass}`}>{char}</span>;
+              return <span className={`${colorClass} `}>{char}</span>;
             })}
           </div>
         );
