@@ -10,7 +10,7 @@ import {
   professionalLinks,
   LinkObject,
 } from './frontPageData';
-import ProjectCard from './sub-components/ProjectCard';
+import TetrisContainer from './sub-components/TetrisContainer';
 
 export default function FrontPage() {
   const leftMain: React.FunctionComponent = () => {
@@ -70,7 +70,7 @@ export default function FrontPage() {
       {/* <Button text="<" />
       <Button text=">" /> */}
 
-      <ProjectCard />
+      <TetrisContainer />
     </div>
   );
 

@@ -8,7 +8,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(css)$/,
+        test: /\.css$/i,
         include: path.resolve(__dirname, 'client-source'),
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },

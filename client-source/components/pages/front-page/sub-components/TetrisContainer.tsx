@@ -34,11 +34,11 @@ const TetrisContainer: React.FunctionComponent = () => {
                   (index > textPosition || index < trail2));
               let colorClass: string;
               if (trailCondition2) {
-                colorClass = 'text-yellow-500';
+                colorClass = 'text-yellow-200';
               } else if (trailCondition) {
-                colorClass = 'text-purple-500';
+                colorClass = 'text-purple-200';
               } else {
-                colorClass = 'text-green-500';
+                colorClass = 'text-green-200';
               }
               return <span className={`${colorClass}`}>{char}</span>;
             })}

@@ -8,20 +8,42 @@ const List: React.FunctionComponent<{
   colorIndex?: number;
 }> = ({ heading, items, link, colorIndex }) => {
   const [showList, setShowList] = useState<boolean>(false);
-  const colors = ['yellow', 'sky', 'emerald', 'rose', 'violet'];
-  const color =
+  // dynamic class names may not exist in tailwind :) https://tailwindcss.com/docs/content-configuration#dynamic-class-names
+  const colorsLight = [
+    'bg-yellow-100',
+    'bg-sky-100',
+    'bg-emerald-100',
+    'bg-rose-100',
+    'bg-violet-100',
+  ];
+  const colorsDarkHover = [
+    'hover:bg-yellow-200',
+    'hover:bg-sky-200',
+    'hover:bg-emerald-200',
+    'hover:bg-rose-200',
+    'hover:bg-violet-200',
+  ];
+
+  const color1 =
     typeof colorIndex === 'number'
-      ? colors[colorIndex % colors.length]
+      ? colorsLight[colorIndex % colorsLight.length]
       : 'zinc';
-  const buttonClasses = `p-2 w-full rounded-lg border-b border-zinc-500 bg-${color}-200 hover:bg-${color}-100`;
+
+  const color2 =
+    typeof colorIndex === 'number'
+      ? colorsDarkHover[colorIndex % colorsDarkHover.length]
+      : 'bg-zinc-100';
+
+  const color3 =
+    typeof colorIndex === 'number'
+      ? colorsLight[(colorIndex + 2) % colorsLight.length]
+      : 'zinc';
+  const buttonClasses = `p-2 w-full rounded-lg border-b border-zinc-500 ${color1} ${color2}`;
   const border =
     'border rounded-lg border-zinc-500 hover:border-zinc-900 w-3/5';
+
   return (
-    <div
-      className={`my-3 text-left ${border} ${
-        showList && `bg-${colors[(colorIndex! + 2) % colors.length]}-100`
-      }`}
-    >
+    <div className={`my-3 text-left ${border} ${showList && `${color3}`}`}>
       <button
         className={`${buttonClasses} `}
         onClick={() => setShowList(!showList)}
