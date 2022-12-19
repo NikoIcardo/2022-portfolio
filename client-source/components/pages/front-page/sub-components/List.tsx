@@ -1,6 +1,22 @@
 import React, { useState } from 'react';
 import Header from '../../page-template/Header';
 
+const colorsLight = [
+  'bg-yellow-100',
+  'bg-sky-100',
+  'bg-emerald-100',
+  'bg-rose-100',
+  'bg-violet-100',
+];
+
+const colorsDarkHover = [
+  'hover:bg-yellow-200',
+  'hover:bg-sky-200',
+  'hover:bg-emerald-200',
+  'hover:bg-rose-200',
+  'hover:bg-violet-200',
+];
+
 const List: React.FunctionComponent<{
   heading: string;
   items: string[];
@@ -9,20 +25,6 @@ const List: React.FunctionComponent<{
 }> = ({ heading, items, link, colorIndex }) => {
   const [showList, setShowList] = useState<boolean>(false);
   // dynamic class names may not exist in tailwind :) https://tailwindcss.com/docs/content-configuration#dynamic-class-names
-  const colorsLight = [
-    'bg-yellow-100',
-    'bg-sky-100',
-    'bg-emerald-100',
-    'bg-rose-100',
-    'bg-violet-100',
-  ];
-  const colorsDarkHover = [
-    'hover:bg-yellow-200',
-    'hover:bg-sky-200',
-    'hover:bg-emerald-200',
-    'hover:bg-rose-200',
-    'hover:bg-violet-200',
-  ];
 
   const color1 =
     typeof colorIndex === 'number'

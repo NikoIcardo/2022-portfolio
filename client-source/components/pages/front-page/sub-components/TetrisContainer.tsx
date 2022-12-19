@@ -1,10 +1,9 @@
-import React, { ReactFragment, useEffect, useState } from 'react';
-import Header from '../../page-template/Header';
+import React, { useEffect, useState } from 'react';
 
 const transitionClass = 'transition ease-in-out delay-150 duration-200 ';
 
 const mainDivClasses =
-  'rounded-lg bg-zinc-300 text-center justify-center hover:shadow-2xl h-[225px] hover:scale-y-150 hover:translate-y-10 hover:bg-sky-800';
+  'rounded-lg bg-zinc-300 text-center justify-center hover:shadow-2xl h-[225px] hover:translate-y-2 hover:bg-sky-800';
 
 const TetrisContainer: React.FunctionComponent = () => {
   const textBaseClass = 'text-4xl';
@@ -58,7 +57,7 @@ const TetrisContainer: React.FunctionComponent = () => {
 
   return (
     <div
-      className={`${transitionClass} ${mainDivClasses} flex grow`}
+      className={`${transitionClass} ${mainDivClasses} flex h-[250px]`}
       onMouseEnter={() => setTextEffect(true)}
       onMouseLeave={() => {
         setTextEffect(false);

@@ -11,6 +11,7 @@ import {
   LinkObject,
 } from './frontPageData';
 import TetrisContainer from './sub-components/TetrisContainer';
+import Projects from './sub-components/Projects';
 
 export default function FrontPage() {
   const leftMain: React.FunctionComponent = () => {
@@ -71,6 +72,7 @@ export default function FrontPage() {
       <Button text=">" /> */}
 
       <TetrisContainer />
+      <Projects />
     </div>
   );
 

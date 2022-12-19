@@ -22,10 +22,30 @@ module.exports = {
           },
         },
       },
+      // {
+      //   test: /\.(png|svg|jpg|gif|jpe?g)$/,
+      //   include: path.resolve(__dirname, 'client-source/photos'),
+      //   use: [
+      //     {
+      //       options: {
+      //         name: '[name].[ext]',
+      //         outputPath: path.resolve(__dirname, 'dist/images'),
+      //       },
+      //       loader: 'file-loader',
+      //     },
+      //   ],
+      // },
+      {
+        test: /\.html$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: '[name][ext]',
+        },
+      },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.png', '.css'],
   },
   target: 'node',
   output: {
