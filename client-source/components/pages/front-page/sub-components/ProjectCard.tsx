@@ -36,6 +36,7 @@ const ProjectCard: React.FunctionComponent<{
       onMouseOver={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onClick={() => window.open(link, '_blank')}
+      style={{ cursor: hover ? 'pointer' : 'default' }}
     >
       <div
         className={`${transitionClass}  ${

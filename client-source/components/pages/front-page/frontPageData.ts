@@ -117,6 +117,13 @@ export const projects = [
     link: 'https://silly-villani-dcd0b8.netlify.app/',
   },
   {
+    title: 'Odins Eye Black Smithing',
+    subtitle: 'React and 3JS',
+    description: 'A website beta created for a local blacksmithing shop.',
+    image: '/odins-eye-black-smithing.png',
+    link: 'https://gleeful-bienenstitch-103742.netlify.app/',
+  },
+  {
     title: 'BugTrack',
     subtitle: 'MERN Stack and Materialize CSS',
     description:
@@ -154,7 +161,7 @@ export const projects = [
     description:
       'An npc based recreation of the popular game agar.io in p5.js. Go ahead and try it out! You can use your mouse to move.',
     image: '/jsagio.png',
-    link: './jsAgar.html',
+    link: 'https://tranquil-daifuku-4ca84e.netlify.app',
   },
   {
     title: 'React Principles',
