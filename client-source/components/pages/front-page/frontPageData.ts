@@ -117,11 +117,27 @@ export const projects = [
     link: 'https://silly-villani-dcd0b8.netlify.app/',
   },
   {
+    title: 'React Principles',
+    subtitle: 'React & Tailwind',
+    description:
+      'A site I created to demonstrate some essential React principles. I built this as a 6 hour challenge in which I also taught myself Tailwind CSS.',
+    image: '/react-principles.png',
+    link: 'https://stupefied-thompson-2921ec.netlify.app',
+  },
+  {
     title: 'Odins Eye Black Smithing',
     subtitle: 'React and 3JS',
     description: 'A website beta created for a local blacksmithing shop.',
     image: '/odins-eye-black-smithing.png',
     link: 'https://gleeful-bienenstitch-103742.netlify.app/',
+  },
+  {
+    title: 'Github Finder',
+    subtitle: 'React and Github API',
+    description:
+      'A site that uses the Github API to search for profiles and display their info and their repositories. See if you can find your account!',
+    image: '/github-finder.png',
+    link: 'https://flamboyant-ardinghelli-e6926e.netlify.app/',
   },
   {
     title: 'BugTrack',
@@ -140,14 +156,6 @@ export const projects = [
     link: 'https://hidden-headland-19257.herokuapp.com/',
   },
   {
-    title: 'Github Finder',
-    subtitle: 'React and Github API',
-    description:
-      'A site that uses the Github API to search for profiles and display their info and their repositories. See if you can find your account!',
-    image: '/github-finder.png',
-    link: 'https://flamboyant-ardinghelli-e6926e.netlify.app/',
-  },
-  {
     title: 'Sight Seeing',
     subtitle: 'MERN Stack',
     description:
@@ -162,13 +170,5 @@ export const projects = [
       'An npc based recreation of the popular game agar.io in p5.js. Go ahead and try it out! You can use your mouse to move.',
     image: '/jsagio.png',
     link: 'https://tranquil-daifuku-4ca84e.netlify.app',
-  },
-  {
-    title: 'React Principles',
-    subtitle: 'React & Tailwind',
-    description:
-      'A site I created to demonstrate some essential React principles. I built this as a 6 hour challenge in which I also taught myself Tailwind CSS.',
-    image: '/react-principles.png',
-    link: 'https://stupefied-thompson-2921ec.netlify.app',
   },
 ];
