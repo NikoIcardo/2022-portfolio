@@ -9,25 +9,41 @@ enum keys {
 }
 
 const zPosition = -2;
-const xOutlineSize = 120;
-const yOutlineSize = 90;
+const xOutlineSize = 12;
+const yOutlineSize = 9;
+
+const outlineBoundary = { x: -6, y: -4.5 };
+
+let movementSpeed = 0.02;
 
 const movement = (key: string, mesh: THREE.Mesh) => {
   switch (key) {
     case keys.ARROW_DOWN: {
-      mesh.position.y -= 0.01;
+      if (mesh.position.y - movementSpeed >= -1.45) {
+        console.log(mesh.position.y);
+        mesh.position.y -= movementSpeed;
+      }
       return;
     }
     case keys.ARROW_UP: {
-      mesh.position.y += 0.01;
+      if (mesh.position.y + movementSpeed <= 1.45) {
+        console.log(mesh.position.y);
+        mesh.position.y += movementSpeed;
+      }
       return;
     }
     case keys.ARROW_RIGHT: {
-      mesh.position.x += 0.01;
+      if (mesh.position.x + movementSpeed <= 1.95) {
+        console.log(mesh.position.x);
+        mesh.position.x += movementSpeed;
+      }
       return;
     }
     case keys.ARROW_LEFT: {
-      mesh.position.x -= 0.01;
+      if (mesh.position.x - movementSpeed >= -1.95) {
+        console.log(mesh.position.x);
+        mesh.position.x -= movementSpeed;
+      }
       return;
     }
   }
@@ -61,7 +77,7 @@ const setMeshPosition = ({
 };
 
 const addGameContainer = (scene: THREE.scene) => {
-  const position = { x: -6, y: -4.5, z: zPosition };
+  const position = { x: outlineBoundary.x, y: outlineBoundary.y, z: zPosition };
 
   const createLine = ({
     axis,
@@ -81,14 +97,14 @@ const addGameContainer = (scene: THREE.scene) => {
   let count = 0;
 
   while (count < 2) {
-    for (let i = 0; i < xOutlineSize; i++) {
+    for (let i = 0; i < xOutlineSize * 10; i++) {
       createLine({
         axis: 'x',
         position,
         increment: !!count ? -0.1 : 0.1,
       });
     }
-    for (let i = 0; i < yOutlineSize; i++) {
+    for (let i = 0; i < yOutlineSize * 10; i++) {
       createLine({
         axis: 'y',
         position,
@@ -97,6 +113,13 @@ const addGameContainer = (scene: THREE.scene) => {
     }
     count++;
   }
+};
+
+const createNewShape = () => {
+  const geometry = new THREE.BoxGeometry(0.1, 0.1, 0);
+  const material = new THREE.MeshNormalMaterial();
+
+  return new THREE.Mesh(geometry, material);
 };
 
 export const init = (
@@ -112,12 +135,9 @@ export const init = (
     );
     camera.position.z = 1;
 
-    const geometry = new THREE.BoxGeometry(0.02, 0.02, 0);
-    const material = new THREE.MeshNormalMaterial();
-
-    const mesh: THREE.Mesh = new THREE.Mesh(geometry, material);
-    mesh.z = zPosition;
-    scene.add(mesh);
+    const shape = createNewShape();
+    shape.z = zPosition;
+    scene.add(shape);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(ref.current.offsetWidth || 1200, ref.current.offsetHeight);
@@ -125,7 +145,7 @@ export const init = (
     ref.current.appendChild(renderer.domElement);
 
     addGameContainer(scene);
-    initMovement(mesh);
+    initMovement(shape);
 
     // animation
     function animation(time) {
@@ -135,3 +155,5 @@ export const init = (
 
   return scene;
 };
+
+// add shape generation
