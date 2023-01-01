@@ -1,10 +1,11 @@
 const path = require('path');
 var LiveReloadPlugin = require('webpack-livereload-plugin');
+const mode = 'production';
 module.exports = {
   name: 'client',
   entry: './client-source/index.tsx',
   devtool: 'inline-source-map',
-  mode: 'development',
+  mode,
   module: {
     rules: [
       {
@@ -52,11 +53,14 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  plugins: [
-    new LiveReloadPlugin({
-      port: 4000,
-      protocol: 'https',
-      hostname: 'localhost',
-    }),
-  ],
+  plugins:
+    mode !== 'production'
+      ? [
+          new LiveReloadPlugin({
+            port: 4000,
+            protocol: 'https',
+            hostname: 'localhost',
+          }),
+        ]
+      : [],
 };

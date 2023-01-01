@@ -36,7 +36,8 @@
     "url-loader": "^4.1.1"
   },
   "scripts": {
-    "build": "webpack --watch",
+    "build": "webpack",
+    "build:dev": "webpack --watch",
     "start": "node ./dist/server.js"
   }
 }

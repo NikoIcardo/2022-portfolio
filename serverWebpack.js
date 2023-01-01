@@ -2,8 +2,11 @@ const path = require('path');
 
 var LiveReloadPlugin = require('webpack-livereload-plugin');
 
+const mode = 'production';
+
 module.exports = {
   name: 'server',
+  mode,
   entry: './server/index.ts',
   devtool: 'inline-source-map',
   module: {
@@ -44,11 +47,14 @@ module.exports = {
     filename: 'server.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  plugins: [
-    new LiveReloadPlugin({
-      port: 3000,
-      protocol: 'https',
-      hostname: 'localhost',
-    }),
-  ],
+  plugins:
+    mode !== 'production'
+      ? [
+          new LiveReloadPlugin({
+            port: 3000,
+            protocol: 'https',
+            hostname: 'localhost',
+          }),
+        ]
+      : [],
 };
