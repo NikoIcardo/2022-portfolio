@@ -37,6 +37,6 @@
   },
   "scripts": {
     "build": "webpack --watch",
-    "server:dev": "node ./dist/server.js"
+    "start": "node ./dist/server.js"
   }
 }
