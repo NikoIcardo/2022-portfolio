@@ -71,7 +71,7 @@ export default function FrontPage() {
       {/* <Button text="<" />
       <Button text=">" /> */}
 
-      <TetrisContainer />
+      {/* <TetrisContainer /> */}
       <Projects />
     </div>
   );
