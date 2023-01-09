@@ -126,7 +126,7 @@ export const projects = [
   },
   {
     title: 'Odins Eye Black Smithing',
-    subtitle: 'React and 3JS',
+    subtitle: 'React and Three.JS',
     description: 'A website beta created for a local blacksmithing shop.',
     image: '/odins-eye-black-smithing.png',
     link: 'https://gleeful-bienenstitch-103742.netlify.app/',
