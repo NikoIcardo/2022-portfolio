@@ -27,13 +27,55 @@ export default function FrontPage() {
             <Header size="h3" children={'Software Engineer'} />
           </div>
           <p className="my-4">
-            I have been coding throughout most of my life: from jr. high java
-            projects, highschool java and web courses, c++ university courses,
-            matlab and python modelling research at the university of Idaho, to
-            a year of professional software engineering. I currently work with
-            fullstack typescript applications in React and Express. I'm always
-            looking to challenge myself and continue developing my skills as a
-            professional software engineer.
+            Hello to all and welcome to my personal portfolio! To describe who I
+            am on one page is probably the most difficult task in the world but
+            what I can start with is that I love history, science, math,
+            philosophy and programming. The latter of those things has become my
+            career in which I can say I am mostly self taught in modern
+            Javascript Frameworks and Web Technologies.
+            <br />
+            <br />
+            My first position was as a software engineer with a company called
+            SPJ Solutions that specialized in VMware NSX network virtualization
+            Migrations from VMware NSX-V to VMware NSX-T and did so using a
+            proprietary software named cITopus. cITopus is a full stack
+            typescript application that utilizes React Redux/Thunk and
+            Node.Js/Express with Sequelize PostgreSQL to facilitate migration
+            tasks and data collection within a deployed docker instance in
+            customer environments.
+            <br />
+            <br />
+            My time there exposed me to all aspects of web development from
+            Front End development and load time optimizations, Back End Service
+            Development with NSX and VMware api's facilitating network
+            automation and migration tasks, web hosting via docker instances and
+            simple apache web servers and responsibility for developing highly
+            scalable applications. In fact, my first few tasks there included
+            developing the entirety of their Downloads Site to allow authorized
+            users to download there Docker images and entirety of the Licensing
+            application to authorize users and generate keys to allow use of
+            cITopus.
+            <br />
+            <br />
+            Although I thrived there and was quickly promoted to a Senior level
+            position assisting Jr. Devs and taking on responsibilty of large
+            feature integrations, economic downturns resulted in the cITopus
+            team dissolving which has left me in search for a new job. An
+            opportunity for a new beginning and chance to work with new and
+            exciting software.
+            <br />
+            <br />A perfect position for me would be one that challenges me and
+            exposes me to new technology and development techniques but provides
+            me with plenty of opportunity to mature as a software engineer in
+            web engineering whether it be on the BE, FE or both. I love learning
+            and am quick to deploy new skills in production environments. I have
+            no issue becoming and doing what it takes to master new languages or
+            stacks and have a proven track record of writing clean and scalable
+            code.
+            <br />
+            <br />I can provide references upon request and look forward to
+            meeting with anyone interested in working with me. Please don't
+            hessitate to reach out, I respond punctually.
           </p>
 
           <Header size="h3" children={'Professional Items'} />
