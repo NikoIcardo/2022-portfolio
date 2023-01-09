@@ -13,7 +13,7 @@ const ProjectCard: React.FunctionComponent<{
   index: number;
 }> = ({ title, subtitle, description, image, link, index }) => {
   const [hover, setHover] = useState<boolean>(false);
-  const smDim = 'h-[40rem] w-[40rem]';
+  const smDim = 'h-[35rem] w-[35rem]';
   const mdDim = 'md:h-[19rem] md:w-[19rem]';
   const xl2Dim = '2xl:h-[25rem] 2xl:w-[24rem]';
 
