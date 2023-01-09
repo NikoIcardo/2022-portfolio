@@ -10,7 +10,7 @@ const List: React.FunctionComponent<{
   const [showList, setShowList] = useState<boolean>(false);
   // dynamic class names may not exist in tailwind :) https://tailwindcss.com/docs/content-configuration#dynamic-class-names
 
-  const buttonClasses = `p-2 w-full rounded-lg border-b border-zinc-500`;
+  const buttonClasses = `hover:bg-zinc-100 p-2 w-full rounded-lg border-b border-zinc-500`;
   const border =
     'border rounded-lg border-zinc-500 hover:border-zinc-900 w-full';
 
