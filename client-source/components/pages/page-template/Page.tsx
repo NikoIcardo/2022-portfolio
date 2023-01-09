@@ -13,12 +13,12 @@ export default function Page({
   Footer?: React.FunctionComponent;
 }) {
   const mainContainerClass =
-    'm-0 h-full p-0 md:grid md:grid-cols-4 lg:grid-cols-6 gap-0';
+    'm-0 h-[100%] p-0 md:grid md:grid-cols-4 lg:grid-cols-6 gap-0';
 
-  const leftContainerClasses = 'w-full h-full md:col-span-2 lg:col-span-2';
+  const leftContainerClasses = 'w-full h-[100%] md:col-span-2 lg:col-span-2';
   const leftContainerXL = '';
 
-  const rightContainerClasses = 'h-full md:col-span-2 lg:col-span-4';
+  const rightContainerClasses = 'h-[%100] md:col-span-2 lg:col-span-4';
   const rightContainerXL = '';
 
   // border-4 border-zinc-600
