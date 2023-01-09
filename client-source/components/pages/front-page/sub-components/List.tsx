@@ -18,12 +18,15 @@ const List: React.FunctionComponent<{
     <div className={`my-3 text-center  ${border} `}>
       <button
         className={`${buttonClasses} `}
-        onClick={() => setShowList(!showList)}
+        onClick={() => {
+          setShowList(!showList);
+          if (link) {
+            window.open(items[0]);
+          }
+        }}
       >
         {link ? (
-          <a href={items[0]} target="_blank">
-            <Header size="h4" children={heading} />
-          </a>
+          <Header size="h4" children={heading} />
         ) : (
           <Header size="h4" children={heading} />
         )}
