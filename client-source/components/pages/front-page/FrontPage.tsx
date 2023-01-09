@@ -68,7 +68,7 @@ export default function FrontPage() {
   };
 
   const rightMain: React.FunctionComponent = () => (
-    <div className={`${rMLg} ${rMLg} bg-slate-900`}>
+    <div className={`${rMLg} ${rMLg} bg-stone-500`}>
       {/* <Button text="<" />
       <Button text=">" /> */}
 
