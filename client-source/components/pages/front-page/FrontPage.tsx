@@ -49,14 +49,14 @@ export default function FrontPage() {
                 <br />
                 <br />
                 My time there exposed me to all aspects of web development from
-                Front End development and load time optimizations, Back End
-                Service Development with NSX and VMware api's facilitating
+                front end development and load time optimizations, back end
+                service development with NSX and VMware api's facilitating
                 network automation and migration tasks, web hosting via docker
                 instances and simple apache web servers and responsibility for
                 developing highly scalable applications. In fact, my first few
-                tasks there included developing the entirety of their Downloads
-                Site to allow authorized users to download there Docker images
-                and entirety of the Licensing application to authorize users and
+                tasks there included developing the entirety of their downloads
+                site to allow authorized users to download their Docker images
+                and entirety of the licensing application to authorize users and
                 generate keys to allow use of cITopus.
                 <br />
                 <br />
@@ -72,9 +72,9 @@ export default function FrontPage() {
                 provides me with plenty of opportunity to mature as a software
                 engineer in web engineering whether it be on the BE, FE or both.
                 I love learning and am quick to deploy new skills in production
-                environments. I have no issue becoming and doing what it takes
-                to master new languages or stacks and have a proven track record
-                of writing clean and scalable code.
+                environments. I have no issue doing what it takes to master new
+                languages or stacks and have a proven track record of writing
+                clean and scalable code.
                 <br />
                 <br />I can provide references upon request and look forward to
                 meeting with anyone interested in working with me. Please don't
