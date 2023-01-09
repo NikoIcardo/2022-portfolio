@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react';
 import ProjectCard from './ProjectCard';
 import { projects } from '../frontPageData';
 
-const mainDivClasses = 'rounded-lg  my-4  p-0 h-[680px]';
+const mainDivClasses = 'p-0';
 // again an issue with tailwind being unable to generate non-dynamic classes... oh well
-
+const smClass = 'sm:h-[100%]';
+// const mdClass = 'md:';
+const lgClass = 'xl:h-[%100] overflow-auto';
 const Projects: React.FunctionComponent = () => {
   return (
-    <div className={`${mainDivClasses} `}>
-      <div className="h-full text-center grid xs:grid-cols-2 xl:grid-cols-4 py-3">
+    <div className={`${smClass} ${lgClass}${mainDivClasses} `}>
+      <div
+        className={`text-center grid xs:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 py-5`}
+      >
         {projects.map(
           (
             {

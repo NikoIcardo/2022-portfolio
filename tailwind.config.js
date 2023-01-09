@@ -3,13 +3,20 @@ const colors = require('tailwindcss/colors');
 module.exports = {
   content: ['./**/*.tsx'],
   theme: {
-    extend: {
-      gridTemplateRows: {
-        10: 'repeat(10, minmax(0, 1fr))',
-      },
+    screens: {
+      sm: '900px',
+
+      md: '1100px',
+
+      lg: '1300px',
+
+      xl: '1500px',
+
+      '2xl': '1700px',
     },
+
     fontFamily: {
-      main: ['Courier New', 'monospace'],
+      main: ['Calibri', 'sans-serif'],
     },
     colors,
     backgroundImage: {

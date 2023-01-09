@@ -14,10 +14,14 @@ import TetrisContainer from './sub-components/TetrisContainer';
 import Projects from './sub-components/Projects';
 
 export default function FrontPage() {
+  const rMSm = 'sm:h-auto';
+  const rMLg = 'xl:h-auto';
   const leftMain: React.FunctionComponent = () => {
     return (
       <>
-        <div className="bg-zinc-300 p-4 rounded-lg">
+        <div
+          className={`${rMLg} ${rMLg} bg-white text-left p-[2rem] my-0 mx-0`}
+        >
           <div>
             <Header size="h2" children={'Niko Icardo'} />
             <Header size="h3" children={'Software Engineer'} />
@@ -31,9 +35,7 @@ export default function FrontPage() {
             looking to challenge myself and continue developing my skills as a
             professional software engineer.
           </p>
-        </div>
 
-        <div className="bg-zinc-300 h-300 p-4 my-4 rounded-lg">
           <Header size="h3" children={'Professional Items'} />
           <div>
             {professionalLinks.map(
@@ -48,9 +50,7 @@ export default function FrontPage() {
               )
             )}
           </div>
-        </div>
 
-        <div className="bg-zinc-300 h-300 p-4 my-4 rounded-lg">
           <Header size="h3" children={'Skills and Technologies'} />
           <div>
             {skills.map(({ heading, items }: SkillObject, index: number) => (
@@ -66,8 +66,9 @@ export default function FrontPage() {
       </>
     );
   };
+
   const rightMain: React.FunctionComponent = () => (
-    <div className="h-500">
+    <div className={`${rMLg} ${rMLg} bg-slate-900`}>
       {/* <Button text="<" />
       <Button text=">" /> */}
 

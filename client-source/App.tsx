@@ -6,7 +6,7 @@ const App = () => {
   return (
     <>
       <div className="font-main text-zinc-700 h-auto m-0 p-0 ">
-        <div className="backdrop-blur-sm">
+        <div className="backdrop-blur-sm m-0 p-0">
           <FrontPage />
         </div>
       </div>

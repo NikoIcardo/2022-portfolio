@@ -13,18 +13,17 @@ export default function Page({
   Footer?: React.FunctionComponent;
 }) {
   const mainContainerClass =
-    'lg:grid lg:grid-cols-4 grid-flow-col gap-2 mx-2 h-full p-12 ';
-  const mainContainerLarge = 'xl:grid-cols-12';
+    'm-0 h-full p-0 md:grid md:grid-cols-4 lg:grid-cols-6 gap-0';
 
-  const leftContainerClasses = 'lg:col-start-1 lg:col-span-2 my-2 p-2 h-full';
-  const leftContainerXL = 'xl:col-start-1 xl:col-span-5';
+  const leftContainerClasses = 'w-full h-full md:col-span-2 lg:col-span-2';
+  const leftContainerXL = '';
 
-  const rightContainerClasses = 'lg:col-start-3 lg:col-span-2 my-2 p-2 h-full';
-  const rightContainerXL = 'xl:col-start-6 xl:col-span-full';
+  const rightContainerClasses = 'h-full md:col-span-2 lg:col-span-4';
+  const rightContainerXL = '';
 
   // border-4 border-zinc-600
   const PageFirstRow: React.FunctionComponent = () => (
-    <div className={[mainContainerClass, mainContainerLarge].join(' ')}>
+    <div className={[mainContainerClass].join(' ')}>
       <div className={[leftContainerClasses, leftContainerXL].join(' ')}>
         <MainLeftSide />
       </div>
@@ -35,7 +34,7 @@ export default function Page({
   );
 
   const PageSecondaryContent = () => (
-    <div className="mx-4">
+    <div className="">
       <SubBody />
     </div>
   );

@@ -1,25 +1,9 @@
 import React, { useState } from 'react';
 
-const transitionClass = 'transition ease-in-out delay-150 duration-200 ';
+const transitionClass = 'transition ease-in-out delay-150 duration-200';
 
-const mainDivClasses =
-  'rounded-lg my-4 p-0 hover:shadow-2xl hover:translate-y-2';
+const mainDivClasses = 'my-4 p-0 hover:shadow-2xl';
 
-const colorsLight = [
-  'bg-yellow-100',
-  'bg-sky-100',
-  'bg-emerald-100',
-  'bg-rose-100',
-  'bg-violet-100',
-];
-
-const colorsDark = [
-  'bg-yellow-200',
-  'bg-sky-200',
-  'bg-emerald-200',
-  'bg-rose-200',
-  'bg-violet-200',
-];
 const ProjectCard: React.FunctionComponent<{
   title: string;
   subtitle: string;
@@ -28,34 +12,37 @@ const ProjectCard: React.FunctionComponent<{
   link: string;
   index: number;
 }> = ({ title, subtitle, description, image, link, index }) => {
-  const colorIndex = index % colorsLight.length;
   const [hover, setHover] = useState<boolean>(false);
+  const smDim = 'h-[40rem] w-[40rem]';
+  const mdDim = 'md:h-[19rem] md:w-[19rem]';
+  const xl2Dim = '2xl:h-[25rem] 2xl:w-[24rem]';
+
   return (
     <div
-      className={`${transitionClass} ${mainDivClasses} h-[300px] w-[90%] border border-zinc-400 justify-self-center`}
+      className={`${mainDivClasses} ${smDim} ${mdDim} ${xl2Dim} justify-self-center`}
       onMouseOver={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onClick={() => window.open(link, '_blank')}
       style={{ cursor: hover ? 'pointer' : 'default' }}
     >
-      <div
-        className={`${transitionClass}  ${
-          hover ? 'h-0' : 'h-2/3'
-        } rounded-t-lg`}
-      >
+      <div className={`${hover ? 'h-0' : 'h-2/3'} `}>
         <img
-          className="rounded-t-lg h-full w-full"
+          className="h-full w-full rounded-t-xl m-0 p-0"
           style={{ zIndex: '0' }}
-          src={!hover ? `images${image}` : ''}
+          src={`images${image}`}
         />
       </div>
       <div
-        className={`${transitionClass}  ${hover ? 'h-full' : 'h-1/3'} ${
-          hover ? colorsDark[colorIndex] : colorsLight[colorIndex]
-        } p-1 hover:rounded-lg rounded-b-lg border border-zinc-300`}
+        className={`${transitionClass} ${
+          hover ? 'h-[100%] w-full' : 'h-1/3'
+        } bg-white px-1 border-t-2 rounded-b-xl ${
+          hover && 'rounded-t-xl p-4'
+        } border-color-zinc-400`}
         style={{ zIndex: '1' }}
       >
-        <p className="mb-1 font-bold">{title}</p>
+        <p className="mb-1 font-bold w-auto bg-slate-300 mx-0 rounded-lg">
+          {title}
+        </p>
         {hover ? description : subtitle}
       </div>
     </div>

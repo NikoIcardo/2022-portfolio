@@ -41,7 +41,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
       );
     case 'h4':
       return (
-        <h4 className="text-xl mb-1 text-left">
+        <h4 className="text-xl mb-1 text-left ">
           {gradient ? <GradientClass text={children} /> : children}
         </h4>
       );
