@@ -11,7 +11,7 @@ export interface LinkObject {
 export const professionalLinks: LinkObject[] = [
   {
     title: 'Resume',
-    link: 'https://nikoicardo.com/NikoIcardosResume.pdf',
+    link: 'https://nikoicardo.com/Niko Icardo - software engineer 2023 resume.pdf',
   },
   {
     title: 'Github',
